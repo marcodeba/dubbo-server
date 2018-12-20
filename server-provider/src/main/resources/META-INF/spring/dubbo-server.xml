@@ -9,7 +9,9 @@
     <dubbo:registry address="zookeeper://localhost:2181"/>
     <dubbo:protocol port="20880" name="dubbo"/>
 
-    <dubbo:service interface="com.gupaoedu.dubbo.IGpHello" ref="gpHelloService"/>
-
+    <dubbo:service interface="com.gupaoedu.dubbo.IGpHello" ref="gpHelloService" protocol="dubbo" version="1.0.0"/>
     <bean id="gpHelloService" class="com.gupaoedu.dubbo.GpHelloImpl"/>
+
+    <dubbo:service interface="com.gupaoedu.dubbo.IGpHello" ref="gpHelloService2" protocol="dubbo" version="1.0.1"/>
+    <bean id="gpHelloService2" class="com.gupaoedu.dubbo.GpHelloImpl2"/>
 </beans>
